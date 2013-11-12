@@ -11,13 +11,14 @@ var bresenham3d = require('bresenham3d'),
     defaultDensity = 1,
     densityMapping = [],
     densityGainMin = 0.005,
+    AC = window.AudioContext || window.webkitAudioContext,
     audioContext,
     game,
     audioDestination;
 
 
 exports.initGameAudio = function(game_, settings) {
-	audioContext = new webkitAudioContext();
+	audioContext = new AC();
 	audioDestination = audioContext.destination;
 	game = game_;
 
